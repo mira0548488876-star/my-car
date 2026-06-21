@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר | MyCar</title>
+    <link rel="stylesheet" href="../css/contact-us.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="icon" href="../images/icons/contact-mail.png">
+</head>
+
+<body>
+
+    <header id="main-header" class="top-bar"></header>
+
+    <main class="contact-container">
+
+        <section class="contact-right">
+            <form class="contact-form" id="order-form" action="thank-you.html" method="post">
+
+                <label for="fullname">
+                    שם מלא
+                    <input type="text" id="fullname" name="fullname" placeholder="הכנס/י שם מלא" required>
+                </label>
+
+                <label for="email">
+                    אימייל
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </label>
+
+                <label for="tel">
+                    טלפון
+                    <input type="tel" id="tel" name="tel" placeholder="050-0000000" required maxlength="10" minlength="10">
+                </label>
+
+                <label for="car-select">
+                    הרכב שברצונך להזמין
+                    <select id="car-select" name="carSelect" required>
+                        <option value="" disabled selected>בחרו רכב מהרשימה...</option>
+                    </select>
+                </label>
+
+                <label for="payment_method">
+                    אמצעי תשלום מועדף למימון
+                    <select id="payment_method" name="payment_method">
+                        <option value="cash">מזומן / העברה בנקאית</option>
+                        <option value="payments">פריסת תשלומים באשראי</option>
+                        <option value="trade-in">עסקת טרייד-אין (החלפת רכב)</option>
+                        <option value="financing">מימון בנקאי מלא</option>
+                    </select>
+                </label>
+
+                <label for="massage">
+                    הערות או בקשות מיוחדות לקראת הרכישה
+                    <textarea id="massage" name="message" rows="4"
+                        placeholder="פרטו כאן במידה ויש לכם שאלות נוספות..." maxlength="100"></textarea>
+                </label>
+
+                <button type="submit">
+                    שליחת הזמנה ונציג יחזור אליך
+                </button>
+
+            </form>
+        </section>
+
+        <section class="contact-left">
+            <h1>נשמח לעזור לך להתקדם לרכב הבא!</h1>
+
+            <div class="contact-image">
+                <img src="../images/icons/contact-mail.gif" alt="אייקון צור קשר">
+            </div>
+
+            <p>
+                מלאו את פרטי ההזמנה, והמומחים שלנו יחזרו אליכם
+            </p>
+        </section>
+
+        <div id="summary-container">
+            <h3>תקציר ההזמנה שלך:</h3>
+
+            <table id="order-summary-table">
+                <thead>
+                    <tr>
+                        <th>פרט</th>
+                        <th>הערך שהוזן</th>
+                    </tr>
+                </thead>
+
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../js/header-footer.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/contact-us.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+/* הגדרות כלליות לגוף הדף */
+body {
+    margin: 0;
+    padding-top: 80px;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+        linear-gradient(180deg, #eef7ff 0%, #f7fbff 52%, #e8f5ff 100%);
+}
+
+/* ההדר העליון */
+header {
+    position: fixed;
+    top: 0;
+    right: 0%; /* RTL */
+    width: 100%; /* תופס את כל רוחב המסך */
+    height: 80px; /* גובה קבוע – חובה */
+    z-index: 1000; /* שיהיה מעל כולם */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: rgb(1, 1, 11);
+}
+
+/* הלוגו */
+.logo img {
+    height: 90px; /* התאמה לגובה ההדר */
+    width: 90px; /* שמירה על פרופורציות */
+    object-fit: contain; /* תחסה לי הכל */
+}
+/* קישורים בהדר */
+header a { 
+    color: aliceblue; 
+    display: flex;
+    border-radius: 999px;
+    padding: 8px 16px;
+    text-align: center;
+}
+/* ניווט */
+.nav {
+    position: absolute;
+    left: 35%; /*  ישרתי לפי ניסוי ותהייה*/
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.nav a {
+    position: relative;
+    transition: 0.3s ; 
+}
+ .nav a:hover ,
+ .nav a.active{
+    box-shadow: 0 0 35px rgba(0, 123, 255, 0.8); /* כחול רך */
+}
+.nav a::after,
+.nav a.active::after {
+    content: ""; /* כדי שתהיה אפשרות ליצור את הקו */
+    position: absolute;
+    bottom: -6px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: #3399ff; /* כחול רך */
+    transition: 0.3s ;
+}
+.nav a:hover::after,
+ .nav a.active::after
+{
+    width: 100%;
+}
+a,
+a:hover,
+a:active,
+a:focus,
+a:visited {
+text-decoration: none; /* ביטול קו תחתון בכל מצב */
+}
+/* footer */
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: black;
+    padding: 36px 20px 28px;
+    margin-top: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-column h4 {
+    color: rgb(95, 96, 97);
+    font-size: x-large;
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+     margin-bottom: 8px;/*רווח תחתי */
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: rgb(181, 183, 186);
+
+}
+@media (max-width: 700px) {
+      body {
+    overflow-y:visible; /* (רק לאורך) שתהיה גלילה */
+    overflow-x: hidden;
+    }
+      header {
+        height: 100px; /* הקטנת ההדר */
+        padding: 0 10px; /* פחות padding */
+    }
+  .nav a::after {
+    content: none;
+    position: absolute;
+    bottom: none;
+    height: 2px;
+    background: #3399ff;
+    transition: width 0.3s ease;
+}
+.main_visual-content p{
+    font-size: 1rem;
+}
+    .logo img {
+        height: 70px; /* הקטנת הלוגו */
+    }
+}
+  /* --- עדכון הניווט המרכזי --- */
+.nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    /* הסרנו את ה-position: absolute וה-left הנוקשים */
+    margin: 0 auto; /* הקסם של ה-CSS: ממרכז את התפריט בצורה מושלמת בין הלוגו להתחברות */
+}
+
+/* --- עדכון הגדרות ה-HEADER --- */
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* מחלק את המרחב בצורה שווה */
+    align-items: center;
+    padding: 0 40px; /* ריווח אחיד מהצדדים */
+    background-color: rgb(1, 1, 11);
+    box-sizing: border-box; /* מונע מה-padding להרחיב את המסך מעבר ל-100% */
+}
+
+/* מיקום אזור ההתחברות בצד שמאל באופן קבוע */
+.auth-container {
+    display: flex;
+    align-items: center;
+    min-width: 120px; /* שומר מקום קבוע מינימלי בשמאל כדי שהתפריט לא יזוז כשהכפתור משתנה */
+    justify-content: flex-end;
+}
+
+/* עיצוב אחיד לכפתורי ההתחברות וההתנתקות */
+.auth-btn {
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.auth-btn:hover {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* אזור הטקסט של המשתמש המחובר */
+.user-info-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-greeting {
+    color: aliceblue;
+    font-size: 0.95rem;
+    white-space: nowrap; /* מונע משם המשתמש לרדת שורה */
+}

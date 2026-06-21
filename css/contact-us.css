@@ -1,0 +1,283 @@
+/* אזור ראשי */
+.contact-container {
+    min-height: calc(100vh - 80px); /* שינוי ל-min-height כדי למנוע חיתוך של הטופס הארוך */
+    display: flex;
+    flex-direction: row; /* שינוי ל-row רגיל כי סידרנו את ה-HTML נכון: ימין טופס, שמאל תמונה */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* כל צד תופס חצי מסך */
+.contact-right,
+.contact-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* צד ימין – הטופס */
+.contact-right {
+    justify-content: center;
+}
+
+/* צד שמאל – טקסט + תמונה */
+.contact-left {
+    text-align: center;
+    gap: 20px;
+}
+
+.contact-container h1 {
+    color: #3399ff;
+    font-size: 3rem; /* הקטנה קלה מ-4rem כדי שהכותרת החדשה והארוכה לא תישבר מכוער */
+    margin: 0;
+    /* צל שנותן תחושה של מסגרת לאותיות */
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.contact-container p {
+    font-size: larger;
+    color: black;
+}
+
+/* תמונה */
+.contact-image img {
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* קופסת הטופס */
+.contact-form {
+    background-color: #3399ff;
+    color: #ffffff; /* שונה ללבן כדי שהטקסט והתוויות ייראו ברור יותר על הרקע הכחול */
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px; /* הגדלה קלה מ-380px כדי לתת מרחב נשימה לשדות החדשים */
+    box-shadow: 0 10px 30px rgba(10, 30, 33, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* תוויות */
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 0.95rem;
+    gap: 5px;
+    font-weight: bold;
+}
+
+/* שדות קלט + עיצוב מיוחד ותואם לתיבות הבחירה החדשות! */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid transparent; /* הכנה לאפקט פוקוס יפה */
+    font-size: 1rem;
+    background-color: white;
+    color: rgb(7, 4, 4);
+    font-family: inherit;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* הוספת עיצוב ייעודי לתיבות הבחירה כדי שלא ייראו מיושנות */
+.contact-form select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path d='M0 3l5 5 5-5z' fill='%23333'/></svg>");
+    background-repeat: no-repeat;
+    background-position: left 12px center; /* חץ קטן בצד שמאל עבור אתרים בעברית */
+    padding-left: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* אפקט פוקוס כשלוחצים על שדה */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #03707a;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaaaaa;
+}
+
+/* כיווני שדות */
+#massage,
+#fullname,
+#car-select,
+#payment-method {
+    direction: rtl;
+}
+#email,
+#tel {
+    direction: ltr;
+}
+
+/* כפתור שליחה */
+.contact-form button {
+    margin-top: 10px;
+    padding: 14px;
+    background-color: rgb(16, 15, 15);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #f3f7fa;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: rgb(87, 240, 250);
+    color: #000;
+    transform: translateY(-3px); /* תיקון מ-3px חיובי למינוס כדי שהכפתור יעלה למעלה בריחוף ולא יירד */
+    border: 1px solid #000;
+}
+
+/* רספונסיביות למובייל */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px 5vw; 
+        flex-direction: column; /* מסדר את הטופס למעלה ואת התמונה למטה באופן טבעי */
+        gap: 40px;
+        height: auto;
+    }
+    
+    .contact-right,
+    .contact-left {
+        width: 100%;
+        margin: 0;
+    }
+
+    .contact-left {
+        margin-top: 20px;
+    }
+
+    .contact-form {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        max-width: 100%;
+    }
+    
+    .contact-container h1 {
+        font-size: 2.2rem;
+    }
+}
+
+   /* עיצוב טבלת סיכום ההזמנה הדינמית */
+
+
+/* כותרת הטבלה */
+#summary-container h3 {
+    color: #3399ff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* מיכל הטבלה - מוסיף מרווח מלמעלה */
+#summary-container {
+    width: 100%;
+    max-width: 500px; /* מעט רחב יותר מהטופס למראה מאוזן */
+    margin: 30px auto 0 auto; /* מרכז את הטבלה מתחת לטופס */
+    box-sizing: border-box;
+}
+
+/* מבנה הטבלה הכללי */
+#summary-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* דואג שהפינות המעוגלות יעבדו */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* צל עדין ומודרני */
+    direction: rtl; /* יישור מימין לשמאל עבור עברית */
+}
+
+/* עיצוב שורת הכותרת (תגיות th) */
+#summary-container th {
+    background-color: rgb(16, 15, 15); /* צבע שחור תואם לכפתור המקורי */
+    color: #ffffff;
+    padding: 14px;
+    font-weight: bold;
+    text-align: right;
+    font-size: 1rem;
+}
+
+/* עיצוב התאים בגוף הטבלה */
+#summary-container td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333333;
+    font-size: 0.95rem;
+    text-align: right;
+}
+
+/* עמודת הפרט (העמודה הימנית) - נעשה אותה מעט מודגשת */
+#summary-container td:first-child {
+    font-weight: bold;
+    color: #555555;
+    width: 35%; /* מקצה מקום קבוע ומאורגן לתוויות */
+    background-color: #f9f9f9; /* רקע אפרפר עדין לעמודת המפתח */
+}
+
+/* אפקט ריחוף עדין על שורות הטבלה */
+#summary-container tbody tr:hover {
+    background-color: #f1f7fe; /* כחלחל בהיר מאוד בריחוף */
+}
+
+/* שורה אחרונה ללא קו תחתון בשביל הפינות המעוגלות */
+#summary-container tbody tr:last-child td {
+    border-bottom: none;
+}
+/* מוסתר כברירת מחדל עד ש-JS מציג אותו */
+#summary-container {
+    display: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto 0 auto;
+    box-sizing: border-box;
+}
+
+/* טבלת הסיכום */
+#order-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+/* התאמה רספונסיבית למובייל */
+@media (max-width: 768px) {
+    #summary-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    
+    #summary-container h3 {
+        font-size: 1.5rem;
+        text-align: center; /* מרכז את הכותרת במובייל */
+    }
+    
+    #summary-container td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

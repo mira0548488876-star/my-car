@@ -1,0 +1,223 @@
+/* ==========================================
+   קונטיינר העמוד הראשי ומרווח מההדר
+   ========================================== */
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    /* מרווח עליון נדיב מההדר הצף השחור */
+    padding: 150px 20px 80px 20px; 
+    background-color: #fcfcfd; /* רקע בהיר וכמעט לבן, נקי לחלוטין */
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   כרטיס הרכב המרכזי
+   ========================================== */
+.item-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 680px; 
+    background: #ffffff; 
+    border-radius: 16px; /* פינות מעוגלות מודרניות, לא מוגזמות */
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03); /* צל קליל וכמעט בלתי מורגש למבנה הכללי */
+    overflow: hidden;
+    border: 1px solid #f1f5f9;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   אזור התמונה - נקי לחלוטין (בלי שום צל!)
+   ========================================== */
+.item-image {
+    width: 100%;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.item-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    /* ביטול מוחלט של כל סוגי ה-shadow והצללים המלוכלכים בתמונה */
+    filter: none !important; 
+    box-shadow: none !important;
+    transition: transform 0.4s ease;
+}
+
+/* אפקט זום חלק בלחיצה או ריחוף */
+.item-card:hover .item-img {
+    transform: scale(1.02);
+}
+
+/* ==========================================
+   אזור התוכן והטקסטים
+   ========================================== */
+.item-content {
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* כותרת דגם הרכב */
+.item-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a; /* שחור עמוק ומודרני */
+    margin: 0 0 8px 0;
+}
+
+/* מפרט מחיר מעוצב וברור */
+.item-price {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.item-price span {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #3399ff; 
+    margin-right: 6px;
+}
+
+/* תיאור הרכב */
+.item-description {
+    font-size: 1.05rem;
+    color: #334155;
+    line-height: 1.6;
+    margin: 0 0 35px 0;
+    max-width: 540px;
+}
+
+.seller-info-box {
+    width: 100%;
+    background-color: #f8fafc; 
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #f1f5f9;
+    box-sizing: border-box;
+    text-align: right; 
+}
+
+.seller-info-box h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 16px 0;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #3399ff; 
+    display: inline-block;
+}
+
+.seller-info-box p {
+    font-size: 1rem;
+    color: #475569;
+    margin: 12px 0;
+    display: flex;
+    justify-content: space-between; /* יישור הכותרת לימין והערך לשמאל */
+    border-bottom: 1px solid #f1f5f9; 
+    padding-bottom: 10px;
+}
+
+.seller-info-box p:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.seller-info-box strong {
+    color: #334155;
+    font-weight: 600;
+}
+
+.seller-info-box span {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.btn-primary {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px; /* גודל מקסימלי יפה לכפתור שלא יימרח */
+    margin: 25px auto 10px auto; /* מרחוק מלמעלה ומלמטה, ומיושר למרכז */
+    padding: 14px 28px;
+    background-color: #3399ff; /* הכחול של האתר מתוך ה-span של המחיר */
+    color: #ffffff;
+    text-decoration: none; /* ביטול הקו התחתון של תגית הקישור */
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 12px; /* פינות מעוגלות מודרניות כמו התיבה של המוכר */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(51, 153, 255, 0.2); /* צל כחלחל עדין מאוד */
+    box-sizing: border-box;
+}
+
+/* אפקט ריחוף על הכפתור */
+.btn-primary:hover {
+    background-color: #267ecc; /* כחול מעט כהה יותר בריחוף */
+    transform: translateY(-2px); /* קפיצה קלה למעלה */
+}
+
+/* זוז לציר הY שלוחצים עלי */
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+
+
+@media (max-width: 600px) {
+    .page {
+        padding: 120px 15px 40px 15px; 
+    }
+
+    .item-image {
+        height: 240px;
+    }
+
+    .item-content {
+        padding: 20px;
+    }
+
+    .item-title {
+        font-size: 1.5rem;
+    }
+
+    /* תוספות לרספונסיביות מלאה: */
+    
+    .item-description {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .seller-info-box {
+        padding: 16px;
+    }
+
+    /* הופך את השורות בפרטי המוכר למבנה אנכי במובייל אם אין מקום */
+    .seller-info-box p {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding-bottom: 8px;
+    }
+
+    /* התאמת הכפתור למסכי מובייל קטנים */
+    .btn-primary {
+        max-width: 100%; /* תופס את מלוא רוחב הכרטיס במובייל */
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}

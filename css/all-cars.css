@@ -1,0 +1,162 @@
+
+.all-e-cars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* רווח מושלם בין הכרטיסים */
+    padding: 120px 20px 0 20px; /* ה-120px בהתחלה מייצר את המרווח המושלם מתחת להדר הצף! */
+    margin-bottom: 100px;
+    box-sizing: border-box;
+}
+.main-txt {
+    /* שינוי הערך הראשון מ-60px ל-120px כדי לייצר את המרווח המבוקש מההדר */
+    margin: 120px auto 40px; 
+    width: 100%;
+    text-align: center;
+}
+.main-txt h1 {
+    color: #1a202c; /* צבע כהה, יוקרתי וקריא */
+    font-size: clamp(1.8rem, 4vw, 2.8rem); 
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 0 auto;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* צל עדין ומודרני במקום השחור הכבד */
+    animation: title-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* אנימציה חלקה יותר */
+}
+
+/* אנימציית כותרת */
+@keyframes title-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================
+   כרטיס רכב יוקרתי ומודרני
+   ========================================== */
+/* כרטיס רכב */
+.single-img-e {
+    width: 360px;
+    /* שינינו מ-min-height קבוע ל-auto עם padding כדי שהכרטיס יגדל באופן גמיש לפי הטקסט */
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 25px 20px; /* הוספת מרווח פנימי נושם מלמעלה ומלמטה */
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.6s ease;
+}
+
+/* תמונת רכב */
+.single-img-e img {
+    width: 100%;
+    height: 160px; /* הגבלת גובה קלה לתמונה נותנת עוד מקום לטקסט למטה */
+    object-fit: contain;
+    margin-bottom: 20px;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* אפקט ריחוף (Hover) דינמי */
+.single-img-e:hover {
+    transform: translateY(-8px); /* הכרטיס צף מעט למעלה */
+    box-shadow: 0 20px 35px rgba(0, 51, 102, 0.12); /* צל כחלחל עמוק ויוקרתי */
+    border-color: #3399ff; /* צבע המסגרת משתנה לצבע המותג שלך */
+}
+
+/* ==========================================
+   תמונת הרכב בתוך הכרטיס
+   ========================================== */
+
+/* אפקט זום אין עדין לתמונת הרכב בריחוף */
+.single-img-e:hover img {
+    transform: scale(1.06); /* תיקון השגיאה הקודמת - עכשיו התמונה גדלה מעט בהרמוניה */
+}
+
+/* ==========================================
+   עיצוב הטקסטים והפרטים (האלמנטים שמוזרקים מה-JS)
+   ========================================== */
+
+/* שם הרכב - h2 / h3 */
+.single-img-e h2, 
+.single-img-e h3,
+.single-img-e .car-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 10px 0 5px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* שנת ייצור */
+.single-img-e p,
+.single-img-e .car-year {
+    font-size: 0.9rem;
+    color: #718096; /* אפור מאופק לשנת הייצור */
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+/* תג המחיר - הבולט ביותר בכרטיס */
+.single-img-e span,
+.single-img-e .car-price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #3399ff; /* הצבע הכחול של הלוגו שלך */
+    background-color: #f0f7ff; /* רקע כחלחל בהיר סביב המחיר */
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: auto; /* דוחף את המחיר תמיד לתחתית הכרטיס באותו קו */
+    text-align: center;
+}
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #3399ff; /* צבע הכפתור תואם ללוגו */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+button:hover {
+    background-color: #1a73e8; /* צבע הכפתור כהה יותר בריחוף */
+    transform: translateY(-3px); /* אפקט ריחוף קל לכפתור */
+}
+/* ==========================================
+   רספונסיביות מלאה למובייל וטאבלטים
+   ========================================== */
+@media (max-width: 768px) {
+    .main-txt {
+        margin: 40px auto 30px;
+    }
+
+    .all-e-cars {
+        gap: 25px;
+        padding: 0 15px;
+        margin-bottom: 60px;
+    }
+
+    .single-img-e {
+        width: 100%; /* כרטיס אחד מלא לרוחב המסך במובייל */
+        max-width: 340px;
+        min-height: 380px;
+        padding: 15px;
+    }
+
+    .single-img-e img {
+        height: 150px; /* תמונה מעט קטנה יותר במסכים קטנים */
+    }
+}

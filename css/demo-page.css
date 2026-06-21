@@ -1,0 +1,57 @@
+/* הגדרות כלליות לגוף הדף */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+}
+/* תוכן העמוד - ממורכז למסך */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px; 
+    text-align: center;
+    gap: 20px;
+}
+/* כותרת 404 */
+.main-content h1 {
+    font-size: clamp(6rem, 12vw, 10rem);
+    color: red;
+}
+/* כפתור החזרה */
+.home-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s  ;
+}
+.home-button:hover {
+    background-color: #9c0404;
+    transform: translateY(-3px);
+}
+/* כדי שהתמונה מתחת לכפתור */
+.demo-image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+@media (max-width: 700px) {
+      body {
+    overflow:visible; /*  שתהיה גלילה */
+     margin: 20px 20px ;}
+
+.main-content{
+width: auto;
+height: auto;
+}
+    }

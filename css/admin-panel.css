@@ -1,0 +1,39 @@
+/* admin-panel.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    max-width: 900px;
+    width: 100%;
+    margin: 80px auto 40px;
+    padding: 24px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+}
+
+h1 {
+    margin-top: 0;
+    color: #1f3a8a;
+}
+
+.admin-info {
+    margin-top: 16px;
+    padding: 16px;
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 12px;
+}
+
+.admin-info p {
+    margin: 0 0 12px;
+}

@@ -1,0 +1,93 @@
+/* login.css */
+
+body {
+    background:
+        linear-gradient(180deg, #f5f9ff 0%, #eef6ff 50%, #f9fbff 100%);
+    min-height: 100vh;
+}
+
+main {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* מיכל טופס ההתחברות */
+.login-container {
+    width: min(420px, 100%);
+    margin: 0;
+    padding: 36px 32px;
+    background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+    border-radius: 18px;
+    box-shadow: 0 14px 40px rgba(36, 103, 200, 0.14);
+    color: #1f2a44;
+    text-align: center;
+    border: 1px solid #dfeeff;
+}
+
+/* כותרת הטופס */
+.login-container h2 {
+    margin: 0 0 24px;
+    color: #2a6dd8;
+    font-size: 1.9rem;
+}
+
+/* שורות הטופס (לייבל ואינפוט) */
+.form-group {
+    margin-bottom: 18px;
+    text-align: right;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #3d4d6a;
+    font-weight: 600;
+}
+
+/* שדות הקלט */
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #c7d8f5;
+    background: #fff;
+    color: #1f2a44;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #5a9cff;
+    box-shadow: 0 0 0 3px rgba(90, 156, 255, 0.15);
+}
+
+/* כפתור ההתחברות */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #2d7ff9 0%, #5ba7ff 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(45, 127, 249, 0.25);
+}
+
+/* הודעת שגיאה */
+.error-msg {
+    color: #d93025;
+    margin-top: 12px;
+    min-height: 20px;
+    display: block;
+}
