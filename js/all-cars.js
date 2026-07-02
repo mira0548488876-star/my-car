@@ -1,6 +1,5 @@
 const allEcars = document.querySelector('.all-e-cars');
 const showCars = (arr) => {
-    // if (!allEcars) return;
     allEcars.innerHTML = ""; // מניעת שכפול רכבים
 
     arr.forEach(x => {
